@@ -1,0 +1,13 @@
+<!-- ThoughtShare/templates/ThoughtShare/welcome.html -->
+
+{% extends 'ThoughtShare/base.html' %}
+
+{% block title %}Thought Share{% endblock %}
+
+{% block body %}
+<div class="form-container">
+    <h1>Welcome!, {{ name }}!</h1>
+    <p>Express you inner thoughts!</p>
+    <a class="add-post-button" href="{% url 'add_post' %}">Add New Post</a>
+</div>
+{% endblock %}

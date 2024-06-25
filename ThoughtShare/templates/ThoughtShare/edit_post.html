@@ -1,0 +1,23 @@
+<!-- ThoughtShare/templates/ThoughtShare/edit_post.html -->
+
+{% extends "ThoughtShare/base.html" %}
+
+{% block title %}Edit Thoughts{% endblock %}
+
+{% block body %}
+<div class="edit-post-page">
+    <h1>Edit Thoughts</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{ post.title }}"><br>
+        <label for="context">Thought:</label>
+        <textarea id="context" name="context">{{ post.context }}</textarea><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" value="{{ post.author }}"><br>
+        <button type="submit">Save Changes</button>
+        <a class="back-button" href="{% url 'view_post' post.id %}">Cancel</a>
+    </form>
+    
+</div>
+{% endblock %}

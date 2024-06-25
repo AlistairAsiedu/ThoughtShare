@@ -1,0 +1,23 @@
+<!-- ThoughtShare/templates/ThoughtShare/add_post.html -->
+
+{% extends "ThoughtShare/base.html" %}
+
+{% block title %}Add Thought{% endblock %}
+
+{% block body %}
+<div class="add-post-page">
+    <h1>Add a New Thought</h1>
+    <form method="post">
+        {% csrf_token %}
+         <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+        <label for="context">Thought:</label>
+        <textarea id="context" name="context"></textarea><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author"><br>
+        <button type="submit">Add Post</button>
+        <a class="back-button" href="{% url 'list' %}">Cancel</a>
+    </form>
+    
+</div>
+{% endblock %}

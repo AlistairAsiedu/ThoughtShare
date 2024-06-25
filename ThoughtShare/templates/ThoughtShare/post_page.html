@@ -1,0 +1,23 @@
+<!-- ThoughtShare/templates/ThoughtShare/post_page.html -->
+
+{% extends "ThoughtShare/base.html" %}
+
+{% block title %}Thought Share{% endblock %}
+
+{% block body %}
+<div class="list-page">
+    <h1>Thoughts</h1>
+    <ul>
+        {% for post in all_post %}
+        <li>
+            <a href="{% url 'view_post' post.id %}">{{ post.title }} - </a>{{ post.created_at }} by {{ post.author }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if perms.ThoughtShare.change_ThoughtShare %}
+        <a class="add-post-button" href="{% url 'add_post' %}">Add New Post</a>
+    {% endif %}
+    {% if request.user.is_authenticated %}
+        <a class="back-button" href="{% url 'logout' %}">Logout</a>
+    {% endif %}
+</div>
+{% endblock %}>

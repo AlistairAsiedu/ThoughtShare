@@ -1,0 +1,15 @@
+<!-- ThoughtShare/templates/ThoughtShare/delete_post.html -->
+
+{% extends 'ThoughtShare/base.html' %}
+
+{% block title %}Delete Thought{% endblock %}
+
+{% block body %}
+<h1>Confirm Delete</h1>
+<p>Are you sure you want to delete "{{ post.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <a href="{% url 'list' %}">Cancel</a>
+</form>
+{% endblock %}

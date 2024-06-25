@@ -1,0 +1,21 @@
+<!-- ThoughtShare/templates/ThoughtShare/view_post.html -->
+
+{% extends "ThoughtShare/base.html" %}
+
+{% block title %}Thoughts{{ post.title }}{% endblock %}
+
+{% block body %}
+<div class="view-post-page">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.context }}</p>
+    <p><strong>Author:</strong> {{ post.author }}</p>
+    <p><strong>Published on:</strong> {{ post.created_at }}</p>
+    <!-- Add links to perform actions on thoughts-->
+    {% if perms.ThoughtShare.change_ThoughtShare %}
+    <a class="delete-post-button" href="{% url 'delete_post' post.id %}">Delete Post</a>
+    <a class="edit-post-button" href="{% url 'edit_post' post.id %}">Edit Post</a>
+    {% end if %}
+    <!-- Add a link back to the list of Thoughts -->
+    <a class="back-button" href="{% url 'list' %}">Back to Posts List</a>
+</div>
+{% endblock %}
