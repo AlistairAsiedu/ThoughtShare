@@ -2,4 +2,4 @@
 A version of a sticky notes application
 
 
-Author Alista Asiedu https://www.linkedin.com/in/alistair-asiedu-286a7b82/
+Author Alistair Asiedu https://www.linkedin.com/in/alistair-asiedu-286a7b82/
